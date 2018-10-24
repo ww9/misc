@@ -1,4 +1,4 @@
 Misc
 ===
 
-Projects not important or finished enough to grant their own git repo.
+Projects not important or finished enough to justify their own git repo.
