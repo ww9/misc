@@ -1,0 +1,196 @@
+<html>
+<head>
+<title>Genetic Evolution</title>
+<script src="includes/p5.min.js"></script>
+<script src="includes/p5.dom.min.js"></script>
+<script type="text/javascript">
+// https://www.youtube.com/watch?v=RxTfc4JLYKs&list=PLRqwX-V7Uu6bJM3VgzjNV5YxVxUwzALHV&index=2
+// https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js/tree/master/chp09_ga/NOC_9_01_GA_Shakespeare
+// Emulate Darwinian Natural Selection by evolving random letters to "to be or not to be"
+// 1) Heredity: pass traits to decendants
+// 2) Mutation: randomly vary traits of each new generation
+// 3) Selection: elements with better fitness score (best traits) have more chance to survive
+
+var population;
+var htmlBest;
+var htmlPopulation;
+var htmlStats;
+
+function setup() {
+	//frameRate(5);
+	htmlBest = createP("Best:");
+	htmlBest.position(10, 10);
+
+	htmlPopulation = createP("Generation:");
+	htmlPopulation.position(500, 10);
+
+	htmlStats = createP("Stats:");
+
+	population = new Population("to be or not to be", 500, 0.02);
+	population.calcFitness();
+}
+function draw() {
+	// population.population[0].genes = ["a","b","c"]; population.population[0].selected = 0;
+	// population.population[1].genes = ["a","b"," "]; population.population[1].selected = 0;
+	// population.population[2].genes = ["a"," "," "]; population.population[2].selected = 0;
+	// population.calcFitness();
+	// selected = [];
+	// for (var i =0; i< 10000; i++) {
+	// 	var ind = population.selectIndividualStochastic();
+	// 	population.population[ind].selected++;		
+	// }
+	// console.log(population);
+	// noLoop();
+
+	population.crossover();
+	population.mutate();
+	population.calcFitness();
+
+	htmlBest.html("Best individual:<br>" + population.getBest());
+	var statstext = "total generations:   " + population.generations + "<br>";
+	statstext += "target:                 " + population.target + "<br>";
+	statstext += "average fitness:        " + nf(population.getAverageFitness()) + "<br>";
+	statstext += "total population:       " + population.population.length + "<br>";
+	statstext += "mutation rate:          " + floor(population.mutationRate * 100) + "%";
+	htmlStats.html(statstext);
+	htmlPopulation.html("All phrases:<br>" + population.getPopulationList());
+
+	if (population.getBest() == population.target) {
+		noLoop();
+		return;
+	}
+}
+
+function DNA(size) {
+	this.genes = [];
+	this.fitness = 0;
+	this.probability = 0;
+	this.getRandomGene = function() {
+		var possible = "abcdefghijklmnopqrstuvwxyz ";
+		return possible.charAt(floor(random(possible.length)));
+	}
+	for (var i = 0; i < size; i++) {
+		this.genes.push(this.getRandomGene());
+	}
+	this.mutate = function(mutationRate) {
+		for (var i = 0; i < this.genes.length; i++) {
+			if (random() <= mutationRate) {
+				this.genes[i] = this.getRandomGene();
+			}
+		}
+	}
+	this.crossover = function(partner) {
+		var child = new DNA(this.genes.length);
+		var midPoint = floor(this.genes.length/2);
+		for (var i = 0; i < this.genes.length; i++) {
+			if (i > midPoint)
+				child.genes[i] = this.genes[i];
+			else
+				child.genes[i] = partner.genes[i];
+		}
+		return child;
+	}
+	this.calcFitness = function(target) {
+		this.fitness = 0;
+		for (var i = 0; i < this.genes.length && i < target.length; i++) {
+			if (this.genes[i] == target.charAt(i)) this.fitness++;			
+		}
+		this.fitness = pow(this.fitness, 4);
+		//this.fitness = constrain(this.fitness/target.length,0, 1);
+		//console.log(this.fitness);
+	}
+}
+
+function Population(target, size, mutationRate) {
+	this.target = target;
+	this.fitnessSum = 0;
+	this.fitnessBest = -1; // Index of individual with best fitness of current generation
+	this.population = [];
+	this.generations = 0;
+	this.mutationRate = mutationRate;
+	for (var i = 0; i < size; i++) {
+		this.population.push(new DNA(this.target.length));
+	}
+	// https://en.wikipedia.org/wiki/Fitness_proportionate_selection
+	// Selects an individual from the population based on its fitness
+	// Uses algorithm discussed in https://www.youtube.com/watch?v=816ayuhDo0E&list=PLRqwX-V7Uu6bw4n02JP28QDuUdNi3EXxJ&index=8
+	// Returns index of selected individual in this.population so we can discard crossover of same elements
+	this.selectIndividualRouletteWheel = function() {
+		var attempts = 0;
+		while (attempts++ < 10000) {
+			// pick random individual
+			var randomIndividual = floor(random(this.population.length));
+			// pick random fitness between 0 and bestFitness
+			var randomFitness = random(0, this.fitnessBest);
+			if (randomFitness < this.population[randomIndividual].fitness) {
+				return randomIndividual;
+			}
+		}
+		return 0;
+	}
+	// https://www.youtube.com/watch?v=ETphJASzYes&index=9&list=PLRqwX-V7Uu6bw4n02JP28QDuUdNi3EXxJ
+	this.selectIndividualStochastic = function() {
+		var index = 0;
+		var r = random();
+		while (index < this.population.length && r > 0) {
+			//console.log(index, this.population[index]);
+			r = r - this.population[index].probability;
+			index++;
+		}
+		index--;
+		return index;
+	}
+	this.crossover = function() {
+		this.generations++;
+		var newPopulation = [];
+		while (newPopulation.length < this.population.length) {
+			var i1 = this.population[this.selectIndividualStochastic()];
+			var i2 = this.population[this.selectIndividualStochastic()];
+			newPopulation.push(i1.crossover(i2));
+		}
+		// build new array of pupulation combininig 2 individuals at a time that are selected using selectIndividualRouletteWheel()
+		this.population = newPopulation;
+	}
+	// mutate changes #mutationRate number of genes randomly in each DNA
+	this.mutate = function() {
+		for (var i = 0; i < this.population.length; i++) {
+			this.population[i].mutate(this.mutationRate);
+		}
+	}
+	this.calcFitness = function() {
+		this.fitnessSum = 0;
+		this.fitnessBest = -1;
+		for (var i = 0; i < this.population.length; i++) {
+			this.population[i].calcFitness(this.target);
+			this.fitnessSum += this.population[i].fitness;
+			if (this.fitnessBest == -1 || this.population[i].fitness > this.population[this.fitnessBest].fitness) {
+				this.fitnessBest = i;
+			}
+		}
+		for (var i = 0; i < this.population.length; i++) {
+			this.population[i].probability = this.population[i].fitness / this.fitnessSum;
+		}
+		//console.log(this.fitnessSum, this.population);
+	}
+	this.getPopulationList = function() {
+		var list = [];
+		for (var i = 0; i < this.population.length; i++) {
+			list.push(this.population[i].genes.join(''));
+		}
+		return list.join('<br>');
+	}
+	this.getBest = function() {
+		if (this.fitnessBest > -1 && this.fitnessBest < this.population.length) {
+			return this.population[this.fitnessBest].genes.join('');
+		}
+		return 'none';
+	}
+	this.getAverageFitness = function() {
+		return this.fitnessSum / this.population.length;
+	}
+}
+</script>
+</head>
+<body>
+</body>
+</html>

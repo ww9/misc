@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Bouncing balls</title>
+<script src="goreload.js"></script>
+<script src="includes/p5.min.js"></script>
+<script type="text/javascript">
+var balls = [];
+function setup() {
+	angleMode(DEGREES);
+	createCanvas(500, 500);
+	for (var i = 0; i < 5; i++) {
+		balls.push(new Ball(random(width), random(height), 40, 6, random(360)));
+	}
+}
+function draw() {
+	background(0);
+	for (var i = 0; i < balls.length; i++) {
+		balls[i].move();
+		balls[i].collideWithWalls();
+		balls[i].draw();
+	}
+}
+
+function Ball(x, y, radius, speed, direction) {
+	this.x = x;
+	this.y = y;
+	this.radius = radius;
+	this.speed = speed;
+	this.direction = direction;
+	this.color = color(255,255,255,200);
+	this.draw = function() {
+		stroke(255);
+		fill(this.color);
+		ellipse(this.x, this.y, this.radius*2, this.radius*2);
+	};
+	this.move = function() {
+		this.x += this.speed * cos(this.direction);
+		this.y += this.speed * sin(this.direction);
+	}
+	this.collideWithWalls = function() {
+		// Right wall
+		if (this.x + this.radius > width) {
+			this.direction = 180 - this.direction;
+			this.x = width - this.radius;
+		}
+		// Left wall
+		if (this.x - this.radius < 0) {
+			this.direction = 180 - this.direction;
+			this.x = this.radius;
+		}
+		// Top wall
+		if (this.y - this.radius < 0) {
+			this.direction = -this.direction;
+			this.y = this.radius;
+		}
+		// Bottom wall
+		if (this.y + this.radius > height) {
+			this.direction = -this.direction;
+			this.y = height - this.radius;
+		}
+	}
+}
+</script>
+</head>
+<body>
+</body>
+</html>
