@@ -30,18 +30,6 @@ function setup() {
 	population.calcFitness();
 }
 function draw() {
-	// population.population[0].genes = ["a","b","c"]; population.population[0].selected = 0;
-	// population.population[1].genes = ["a","b"," "]; population.population[1].selected = 0;
-	// population.population[2].genes = ["a"," "," "]; population.population[2].selected = 0;
-	// population.calcFitness();
-	// selected = [];
-	// for (var i =0; i< 10000; i++) {
-	// 	var ind = population.selectIndividualStochastic();
-	// 	population.population[ind].selected++;		
-	// }
-	// console.log(population);
-	// noLoop();
-
 	population.crossover();
 	population.mutate();
 	population.calcFitness();
