@@ -1,0 +1,8 @@
+# This is like Makefiles, but easier and trully cross-platform. See https://github.com/go-task/task
+version: '2'
+
+tasks:
+  filter:
+    desc: Runs filter_generator.js node script to update LE_FILTER.filter file
+    cmds:
+      - node filter_generator.js

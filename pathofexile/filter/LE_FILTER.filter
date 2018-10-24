@@ -1,0 +1,957 @@
+#================================================================================================
+#░░░░░░░░▄▄▄▀▀▀▄▄███▄░░░░░░░░░░░░░░ 
+#░░░░░▄▀▀░░░░░░░▐░▀██▌░░░░░░░░░░░░░ 
+#░░░▄▀░░░░▄▄███░▌▀▀░▀█░░░░░░░░░░░░░ 
+#░░▄█░░▄▀▀▒▒▒▒▒▄▐░░░░█▌░░░░░░░░░░░░ 
+#░▐█▀▄▀▄▄▄▄▀▀▀▀▌░░░░░▐█▄░░░░░░░░░░░ 
+#░▌▄▄▀▀░░░░░░░░▌░░░░▄███████▄░░░░░░ 
+#░░░░░░░░░░░░░▐░░░░▐███████████▄░░░ 
+#░░░░░le░░░░░░░▐░░░░▐█████████████▄ 
+#░░░░filter░░░░░░▀▄░░░▐█████████████▄ 
+#░░░░░░has░░░░░░░░▀▄▄███████████████ 
+#░░░░░arrived░░░░░░░░░░░░█▀██████░░
+#
+# Stash tab symbols http://csbruce.com/software/utf-8.html
+# © Currency | $ Shop | ☄ Essences | ♥ Keep | ♣ Card | Flask
+# ⦿ Prophecies | ☢ Junk | ֎ Gems | Ⓕ Fragments | ★ Uniques | ☷ Quad
+#
+# Big ASCII art titles generated here: http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=SESSION%20
+#
+# See filter_generator.js to see how this filter file is created.
+# Perhaos we can automate this with a commandline node app to update the filter file and 
+# notifiy the user to reload filter in Path of Exile.
+#
+# License: IDGAF
+#================================================================================================
+
+# ████████╗███████╗███╗   ███╗██████╗  ██████╗ ██████╗  █████╗ ██████╗ ██╗   ██╗
+# ╚══██╔══╝██╔════╝████╗ ████║██╔══██╗██╔═══██╗██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝
+#    ██║   █████╗  ██╔████╔██║██████╔╝██║   ██║██████╔╝███████║██████╔╝ ╚████╔╝ 
+#    ██║   ██╔══╝  ██║╚██╔╝██║██╔═══╝ ██║   ██║██╔══██╗██╔══██║██╔══██╗  ╚██╔╝  
+#    ██║   ███████╗██║ ╚═╝ ██║██║     ╚██████╔╝██║  ██║██║  ██║██║  ██║   ██║   
+#    ╚═╝   ╚══════╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
+# Expensive items this league
+Show
+BaseType "Enlighten Support" "Eye Jewel"
+SetTextColor  30 150 180
+SetBorderColor  30 150 180
+SetBackgroundColor  0 0 0
+SetFontSize 50
+CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+DisableDropSound
+MinimapIcon 0 Yellow Star
+
+# Stuff to hide but signal with a beam
+# Hide
+# Class Currency
+# StackSize 1
+# BaseType "Scroll of Wisdom"
+# SetFontSize 50
+# PlayEffect Yellow
+# DisableDropSound
+
+# Temporary currency (crap but picking for now)
+# "Chromatic Orb" "Glassblower's Bauble" "Silver Coin" "Orb of Chance" "Orb of Alteration" "Orb of Transmutation" "Orb of Augmentation" "Armourer's Scrap"
+# Show
+# Class Currency
+# BaseType "Blacksmith's Whetstone" 
+# SetTextColor 0 0 0 255
+# SetBorderColor 0 0 0 255
+# SetBackgroundColor 249 150 25
+# SetFontSize 50
+# CustomAlertSound "BexPop.mp3"
+# DisableDropSound
+# MinimapIcon 0 Yellow Star
+
+# Identify Rings/Amulets for alcs
+# "Belts" "Helmets" "Boots" "Body Armours" "Claws" "Gloves"
+# Show
+# Class "Amulets" "Rings" "Wands"
+# Rarity Rare
+# Height <= 3
+# #ItemLevel >= 60
+# SetBorderColor  255 255 126 255
+# SetFontSize 50
+# CustomAlertSound "BexPop.mp3"
+# DisableDropSound
+# MinimapIcon 0 Yellow Star
+
+# ██████╗ ███████╗ ██████╗██╗██████╗ ███████╗███████╗
+# ██╔══██╗██╔════╝██╔════╝██║██╔══██╗██╔════╝██╔════╝
+# ██████╔╝█████╗  ██║     ██║██████╔╝█████╗  ███████╗
+# ██╔══██╗██╔══╝  ██║     ██║██╔═══╝ ██╔══╝  ╚════██║
+# ██║  ██║███████╗╚██████╗██║██║     ███████╗███████║
+# ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝╚═╝     ╚══════╝╚══════╝
+# 6 links
+Show
+LinkedSockets 6
+SetTextColor 0 0 0
+SetBorderColor 0 0 0
+SetBackgroundColor 255 0 0
+SetFontSize 50
+CustomAlertSound "veryvaluable.mp3"
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# 6 sockets
+Show
+Sockets >= 6
+SetFontSize 50
+SetTextColor  0 0 0
+SetBorderColor  0 0 0
+SetBackgroundColor  47 255 0
+CustomAlertSound "witcher_6_sockets.mp3"
+DisableDropSound
+MinimapIcon 0 Yellow Star
+
+# ██████╗  █████╗ ███████╗███████╗███████╗
+# ██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
+# ██████╔╝███████║███████╗█████╗  ███████╗
+# ██╔══██╗██╔══██║╚════██║██╔══╝  ╚════██║
+# ██████╔╝██║  ██║███████║███████╗███████║
+# ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+# Manually added bases that are worth a lot even when lower than ilvl 82 which is the minimum @ poe.ninja
+Show
+ShaperItem True
+Rarity <= Rare
+BaseType "Marble Amulet"
+SetTextColor 255 255 255
+SetBorderColor 0 255 0
+SetBackgroundColor 0 128 0 96
+SetFontSize 50
+CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3" 
+DisableDropSound
+MinimapIcon 0 Green Triangle
+
+
+
+# Highlighting bases that are worth at least 6c
+Show
+	ElderItem True
+	ItemLevel >= 82
+	Rarity <= Rare
+	BaseType "Lapis Amulet" "Highborn Bow" "Nightmare Bascinet" "Glorious Plate" "Fencer Helm" "Amethyst Ring" "Paua Ring" "Turquoise Amulet" "Siege Helmet" "Samite Helmet" "Gemini Claw" "Rustic Sash" "Paua Amulet" "Prophet Crown" "Gold Amulet" "Deicide Mask" "Iron Ring" "Amber Amulet" "Noble Tricorne"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ShaperItem True
+	ItemLevel >= 82
+	Rarity <= Rare
+	BaseType "Ambusher" "Astral Plate" "Hubris Circlet" "Iron Ring" "Gemini Claw" "Vaal Sceptre" "Amber Amulet" "Sekhem" "Jade Amulet" "Diamond Ring" "Gold Amulet" "Royal Skean" "Bone Helmet"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ElderItem True
+	ItemLevel >= 83
+	Rarity <= Rare
+	BaseType "Gladiator Helmet" "Hubris Circlet" "Jade Amulet" "Aventail Helmet" "Serpentscale Gauntlets" "Silken Hood" "Lacquered Helmet" "Cloth Belt"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ItemLevel >= 83
+	Rarity <= Rare
+	BaseType "Murderous Eye Jewel" "Angelic Kite Shield"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ShaperItem True
+	ItemLevel >= 83
+	Rarity <= Rare
+	BaseType "Serrated Foil" "Stag Sceptre" "Apex Rapier" "Lead Sceptre" "Coral Ring" "Harpy Rapier" "Gladius" "Burnished Foil" "Demon Dagger" "Corsair Sword" "Grinning Fetish" "Twin Claw"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ElderItem True
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "Praetor Crown" "Grove Bow" "Gladiator Plate" "Gilded Sallet" "Pig-Faced Bascinet" "Maraketh Bow" "Coral Amulet" "Heavy Belt" "Tempered Foil" "Thicket Bow" "Sinner Tricorne"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ShaperItem True
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "Butcher Knife" "Eternal Burgonet" "Carnal Sceptre" "Royal Burgonet" "Profane Wand" "Stealth Gloves" "Murder Mitts" "Spiked Gloves" "Sorcerer Boots" "Slink Gloves" "Estoc" "Graceful Sword" "Shadow Sceptre" "Crystal Sceptre" "Tyrant's Sekhem" "Occultist's Vestment" "Conjurer Gloves"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "Stygian Vise" "Imperial Claw"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ShaperItem True
+	ItemLevel >= 85
+	Rarity <= Rare
+	BaseType "Serrated Arrow Quiver" "Platinum Sceptre" "Fiend Dagger" "Imperial Skean" "Maraketh Bow" "Fancy Foil" "Royal Sceptre" "Ezomyte Staff" "Pinnacle Tower Shield" "Sai" "Tempered Foil" "Courtesan Sword" "Widowsilk Robe" "Sapphire Ring" "Titan Greaves" "Legion Hammer" "Karui Sceptre" "Ironwood Buckler" "Ezomyte Dagger" "Harbinger Bow"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ElderItem True
+	ItemLevel >= 85
+	Rarity <= Rare
+	BaseType "Slink Gloves" "Assassin's Garb" "Stealth Gloves" "Crusader Buckler" "Bone Circlet" "Sharktooth Arrow Quiver" "Antique Gauntlets" "Dragonscale Gauntlets" "Serrated Arrow Quiver" "Vaal Gauntlets" "Callous Mask" "Two-Point Arrow Quiver" "Trapper Mitts" "Crusader Gloves" "Zodiac Leather" "Colossal Tower Shield"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ItemLevel >= 85
+	Rarity <= Rare
+	BaseType "Ancient Spirit Shield" "Fingerless Silk Gloves" "Sorcerer Gloves"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ElderItem True
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "Exquisite Leather" "Legion Hammer" "Behemoth Mace" "Golden Plate" "Sadist Garb" "Penetrating Arrow Quiver" "Chain Belt" "Fancy Foil" "Shagreen Gloves" "Goliath Gauntlets" "Spiraled Foil" "Ancient Gauntlets" "Pinnacle Tower Shield" "Soldier Gloves" "Goliath Greaves" "Majestic Plate" "Spidersilk Robe" "Cutthroat's Garb" "Soldier Boots" "Hydrascale Gauntlets"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ShaperItem True
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "Primeval Rapier" "Mind Cage" "Boot Blade" "Runic Hatchet" "Ursine Pelt" "Soldier Boots" "Assassin's Garb" "Praetor Crown" "Ambush Mitts" "Thicket Bow" "Tiger Hook" "Amethyst Ring" "Wyrmscale Boots" "Triumphant Lamellar" "Siege Axe" "Royal Axe" "Samite Helmet" "Serpentine Staff" "Fencer Helm" "Auric Mace" "Highborn Bow" "Samite Gloves"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "Bone Helmet" "Archon Kite Shield" "Crusader Gloves" "Ancient Greaves" "Gripped Gloves"
+	SetTextColor 255 255 255
+	SetBorderColor 0 255 0
+	PlayAlertSound 16 300
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	
+	
+	# Highlighting bases that are worth at least 10c
+	Show
+	ElderItem True
+	ItemLevel >= 82
+	Rarity <= Rare
+	BaseType "Bone Helmet" "Leather Belt" "Onyx Amulet" "Eternal Burgonet" "Diamond Ring" "Citrine Amulet" "Agate Amulet" "Unset Ring" "Jade Amulet" "Two-Stone Ring" "Coral Ring" "Thicket Bow" "Sapphire Ring" "Ruby Ring" "Topaz Ring" "Titan Gauntlets" "Two-Toned Boots"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ShaperItem True
+	ItemLevel >= 82
+	Rarity <= Rare
+	BaseType "Agate Amulet" "Onyx Amulet" "Sambar Sceptre" "Lapis Amulet" "Citrine Amulet" "Leather Belt" "Turquoise Amulet" "Golden Kris" "Fingerless Silk Gloves" "Void Sceptre" "Opal Sceptre" "Jewelled Foil" "Penetrating Arrow Quiver" "Imperial Bow" "Spike-Point Arrow Quiver" "Platinum Kris" "Two-Toned Boots" "Eclipse Staff" "Gripped Gloves" "Broadhead Arrow Quiver" "Fire Arrow Quiver" "Sharktooth Arrow Quiver" "Spiraled Foil" "Blunt Arrow Quiver" "Stag Sceptre" "Poignard" "Abyssal Sceptre" "Karui Sceptre" "Trisula"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ItemLevel >= 82
+	Rarity <= Rare
+	BaseType "Searching Eye Jewel"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ElderItem True
+	ItemLevel >= 83
+	Rarity <= Rare
+	BaseType "Astral Plate" "Blue Pearl Amulet" "Spiked Gloves" "Royal Burgonet" "Gripped Gloves" "Fingerless Silk Gloves" "Amber Amulet" "Turquoise Amulet" "Imperial Claw" "Jewelled Foil" "Ezomyte Burgonet" "Samite Helmet" "Embroidered Gloves" "Reaver Helmet" "Vanguard Belt" "Gilded Sallet"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ShaperItem True
+	ItemLevel >= 83
+	Rarity <= Rare
+	BaseType "Amber Amulet" "Jade Amulet" "Hubris Circlet" "Blue Pearl Amulet" "Astral Plate" "Imperial Claw" "Diamond Ring" "Vaal Sceptre" "Gemini Claw" "Behemoth Mace" "Two-Point Arrow Quiver" "Bone Helmet" "Carnal Sceptre" "Tyrant's Sekhem" "Wyrmbone Rapier" "Serrated Arrow Quiver" "Shadow Sceptre"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ItemLevel >= 83
+	Rarity <= Rare
+	BaseType "Hypnotic Eye Jewel"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ShaperItem True
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "Vaal Regalia" "Paua Amulet" "Gold Amulet" "Coral Amulet" "Heavy Belt" "Tiger Hook"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ElderItem True
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "Hubris Circlet" "Lapis Amulet" "Gemini Claw" "Moonstone Ring" "Slink Gloves" "Lion Pelt" "Gold Amulet" "Iron Ring"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "Opal Ring" "Steel Ring" "Marble Amulet" "Murderous Eye Jewel" "Ghastly Eye Jewel"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ShaperItem True
+	ItemLevel >= 85
+	Rarity <= Rare
+	BaseType "Royal Burgonet" "Ambusher" "Coral Ring" "Paua Ring" "Serrated Foil" "Harpy Rapier" "Apex Rapier" "Lead Sceptre" "Unset Ring" "Spiked Gloves" "Crystal Sceptre" "Two-Stone Ring" "Sorcerer Boots" "Nightmare Bascinet" "Ruby Ring" "Lion Pelt" "Opal Wand" "Demon Dagger" "Shagreen Tower Shield" "Vaal Blade" "Colossal Tower Shield" "Estoc"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ElderItem True
+	ItemLevel >= 85
+	Rarity <= Rare
+	BaseType "Paua Ring" "Siege Helmet" "Silken Hood" "Coral Amulet" "Sorcerer Gloves" "Archon Kite Shield" "Pig-Faced Bascinet" "Prophet Crown" "Eelskin Gloves" "Nightmare Bascinet" "Paua Amulet"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ShaperItem True
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "Titan Greaves" "Carnal Armour" "Eternal Burgonet" "Pinnacle Tower Shield" "Zodiac Leather" "Archon Kite Shield" "Glorious Plate" "Maraketh Bow" "Slink Gloves" "Goliath Greaves" "Profane Wand" "Royal Sceptre" "Harbinger Bow" "Saintly Chainmail" "Noble Tricorne" "Sapphire Ring" "Topaz Ring" "Platinum Sceptre" "Ancient Greaves" "Blood Sceptre" "Fancy Foil" "Sai" "Titan Gauntlets" "Hydrascale Boots" "Murder Boots" "Fiend Dagger" "Royal Skean" "Moonstone Ring" "Imbued Wand" "Chain Belt" "Slaughter Knife" "Vaal Rapier" "Prophecy Wand" "Imperial Skean"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "Two-Toned Boots" "Sorcerer Boots" "Stygian Vise" "Titanium Spirit Shield" "Crystal Belt" "Prismatic Ring"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+	Show
+	ElderItem True
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "Glorious Plate" "Mind Cage" "Gladiator Plate" "Vaal Regalia" "Heavy Belt" "Ursine Pelt" "Maraketh Bow" "Lacquered Helmet" "Imperial Bow" "Solaris Circlet" "Magistrate Crown" "Necromancer Circlet" "Great Crown" "Regicide Mask" "Harlequin Mask" "Steel Circlet" "Fluted Bascinet" "Callous Mask" "Harbinger Bow" "Colossal Tower Shield" "Crusader Buckler" "Gold Ring" "Rustic Sash" "Amethyst Ring" "Sharkskin Gloves" "Vaal Axe" "Colosseum Plate" "Wyrmscale Gauntlets" "Carnal Armour"
+	SetTextColor 255 255 255
+	SetBorderColor 255 0 0
+	CustomAlertSound "LakadMatataaag_NormalinNormalin.mp3"
+	SetBackgroundColor 0 128 0 96
+	SetFontSize 50
+	DisableDropSound
+	MinimapIcon 0 Green Triangle
+
+# ██╗     ███████╗██╗   ██╗███████╗██╗     ██╗███╗   ██╗ ██████╗ 
+# ██║     ██╔════╝██║   ██║██╔════╝██║     ██║████╗  ██║██╔════╝ 
+# ██║     █████╗  ██║   ██║█████╗  ██║     ██║██╔██╗ ██║██║  ███╗
+# ██║     ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║     ██║██║╚██╗██║██║   ██║
+# ███████╗███████╗ ╚████╔╝ ███████╗███████╗██║██║ ╚████║╚██████╔╝
+# ╚══════╝╚══════╝  ╚═══╝  ╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+# 4-5 links before maps
+# Show
+# ItemLevel <= 67
+# LinkedSockets 4
+# SetFontSize 38
+# CustomAlertSound "01 yes.mp3"
+# MinimapIcon 2 Red Hexagon
+# DisableDropSound
+
+# 3 links up to ilvl 24
+Show
+ItemLevel <= 24
+LinkedSockets 3
+SetFontSize 38
+CustomAlertSound "01 yes.mp3"
+MinimapIcon 2 White Hexagon
+DisableDropSound
+
+# ██████╗  █████╗ ██████╗ ███████╗███████╗
+# ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝
+# ██████╔╝███████║██████╔╝█████╗  ███████╗
+# ██╔══██╗██╔══██║██╔══██╗██╔══╝  ╚════██║
+# ██║  ██║██║  ██║██║  ██║███████╗███████║
+# ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝
+# Hide breach rings
+Hide
+BaseType "Breach Ring"
+SetFontSize 16
+DisableDropSound
+# Identified rares tend to be league special shenanigans (or chest mod). So we highlight those differently
+# Show
+# Rarity <= Rare
+# Identified True
+# Corrupted False
+# SetTextColor 0 0 0 255
+# SetBorderColor 0 0 0 255
+# SetBackgroundColor 249 150 25
+# SetFontSize 50
+# DisableDropSound
+# MinimapIcon 0 Yellow Star
+# PlayEffect Red
+# Show some Shaper/Elder Rares
+# Shaped stat sticks need Phys as Extra Cold/Fire/Lightning Damage. Global Crit Multi, Elemental Penetration also good. iLvl 75/80 is T2/T1 Shaper extra mod
+Show
+#Class "Amulets" "Rings" "Belts" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Daggers" "Claws" "Sceptres"
+ShaperItem True
+Rarity <= Rare
+SetBorderColor  255 255 126 255
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+Show
+ElderItem True
+Rarity <= Rare
+SetBorderColor  255 255 126 255
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+
+# Rare boots (iLvl 86+ for 35% move speed)
+Show
+ItemLevel >= 86
+Class "Boots"
+Rarity Rare
+SetBorderColor  255 255 126 255
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# Good rares
+Show
+BaseType "Stygian Vise" "Opal Ring" "Steel Ring" "Marble Amulet"
+Rarity Rare
+SetBorderColor  255 255 126 255
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+
+# Rare crap
+Hide
+Class "Rings" "Amulets" "Belts" "Wands" "Body Armours" "Shields" "Quivers" "Daggers" "Sceptres" "Bows" "Claws" "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Boots" "Helmets" "Gloves"
+Rarity <= Rare
+SetFontSize 16
+DisableDropSound
+
+#  ██████╗ █████╗ ██████╗ ██████╗ ███████╗
+# ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔════╝
+# ██║     ███████║██████╔╝██║  ██║███████╗
+# ██║     ██╔══██║██╔══██╗██║  ██║╚════██║
+# ╚██████╗██║  ██║██║  ██║██████╔╝███████║
+#  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝
+# Show these cards regardless of price
+Show
+Class "Divination Card"
+BaseType "Rain of Chaos" 
+SetFontSize 50
+SetTextColor 0 0 0 255
+SetBorderColor 0 0 0 255
+SetBackgroundColor 255 0 0 255
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+
+# Hide cards that will always be cheap and useless even in league start
+Hide
+Class "Divination Card"
+BaseType "Volatile Power" "Turn the Other Cheek" "Thunderous Skies" "The Web" "The Warden" "The Visionary" "The Twins" "The Sigil" "The Ruthless Ceinture" "The Rabid Rhoa" "The Insatiable" "The Road to Power" "Atziri's Arsenal" "Audacity" "Birth of the Three" "Boundless Realms" "Earth Drinker" "Forbidden Power" "Hope" "Hubris" "Light and Truth" "Lysah's Respite" "Mitts" "Rain Tempter" "The Arena Champion" "The Avenger" "The Blazing Fire" "The Demoness" "The Dragon" "The Endurance" "The Eye of the Dragon" "The Forsaken" "The Harvester" "The Lord in Black" "The Oath" "The Pact" "The Poet" "The Scavenger" "The Siren" "The Spoiled Prince" "The Sword King's Salute" "The Traitor" "The Watcher" "Tranquillity" "Treasure Hunter" "The Drunken Aristocrat" "Call to the First Ones" "The Conduit" "The Tower" "The Army of Blood" "The Battle Born" "The Garish Power" "The Doppelganger" "The Witch" "The Feast" "The Summoner" "The Surgeon" "The Inoculated" "Rats" "Death" "The Calling" "The Coming Storm" "Gift of the Gemling Queen" "Doedre's Madness" "The Gladiator" "Shard of Fate" "Prosperity" "The Gentleman" "The Wolf's Shadow" "The Lunaris Priestess" "The Scarred Meadow" "A Mother's Parting Gift" "Anarchy's Price" "Assassin's Favour" "Cartographer's Delight" "Destined to Crumble" "Dying Anguish" "Lantador's Lost Love" "Might is Right" "Struck by Lightning" "The Betrayal" "The Carrion Crow" "The Deceiver" "The Flora's Gift" "The Hermit" "The Incantation" "The King's Blade" "The Lich" "The Lover" "The Mercenary" "The Metalsmith's Gift" "The Opulent" "The Pack Leader" 
+SetFontSize 16
+DisableDropSound
+# Show remaining cards
+Show
+Class "Divination Card"
+SetFontSize 50
+SetTextColor 0 0 0 255
+SetBorderColor 0 0 0 255
+SetBackgroundColor 255 0 0 255
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+
+# ██╗   ██╗███╗   ██╗██╗ ██████╗ ██╗   ██╗███████╗███████╗
+# ██║   ██║████╗  ██║██║██╔═══██╗██║   ██║██╔════╝██╔════╝
+# ██║   ██║██╔██╗ ██║██║██║   ██║██║   ██║█████╗  ███████╗
+# ██║   ██║██║╚██╗██║██║██║▄▄ ██║██║   ██║██╔══╝  ╚════██║
+# ╚██████╔╝██║ ╚████║██║╚██████╔╝╚██████╔╝███████╗███████║
+#  ╚═════╝ ╚═╝  ╚═══╝╚═╝ ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝
+# Show all uniques in league start
+Show
+Rarity Unique
+SetTextColor  175 96 37
+SetBorderColor  175 96 37
+SetBackgroundColor  255 255 255
+SetFontSize 50
+CustomAlertSound "d2_unique.mp3"
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# Crap uniques (manualy added, mostly items that are worth something only after fated and even then only a few chaos)
+Hide
+Rarity Unique
+Sockets < 6
+BaseType "Royal Bow" "Iron Circlet" "Sharktooth Arrow Quiver" "Widowsilk Robe" "Plate Vest" "Gavel" "Gilded Sallet" "Necromancer Circlet" "Jade Hatchet" "Coral Amulet" "Death Bow" "Scholar Boots" "Cleaver" "Vaal Blade" "Assassin Bow" "Great Mallet" "Two-Point Arrow Quiver" "Gnarled Branch" "Iron Mask" "Sledgehammer" "Terror Claw" "Royal Staff" "Quicksilver Flask" "Reaver Sword" "Blunt Arrow Quiver" "Legion Sword" "Sulphur Flask" "Leather Hood" "Leather Belt" "Plank Kite Shield" "Fire Arrow Quiver" "Crystal Wand" "Pinnacle Tower Shield" "Jade Amulet" "Vaal Axe" "Golden Buckler" "Quartz Flask" "Woodsplitter" "Chain Belt" "Greater Mana Flask" "Goathide Gloves" "Crusader Gloves" "Crude Bow" "Leather Cap" "Velvet Gloves" "Lapis Amulet" "Paua Amulet" "Long Bow" "Ornate Sword" "Maelström Staff" "Despot Axe" "Imperial Skean" "Rustic Sash" "Elegant Sword" "Rusted Sword" "Diamond Flask" "Zodiac Leather" "Reinforced Greaves" "Vaal Gauntlets"
+DisableDropSound
+# Remaining Uniques
+Show
+Rarity Unique
+SetTextColor  175 96 37
+SetBorderColor  175 96 37
+SetBackgroundColor  255 255 255
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+
+#  ██████╗██╗   ██╗██████╗ ██████╗ ███████╗███╗   ██╗ ██████╗██╗   ██╗
+# ██╔════╝██║   ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║██╔════╝╚██╗ ██╔╝
+# ██║     ██║   ██║██████╔╝██████╔╝█████╗  ██╔██╗ ██║██║      ╚████╔╝ 
+# ██║     ██║   ██║██╔══██╗██╔══██╗██╔══╝  ██║╚██╗██║██║       ╚██╔╝  
+# ╚██████╗╚██████╔╝██║  ██║██║  ██║███████╗██║ ╚████║╚██████╗   ██║
+#  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝   ╚═╝
+# These shards should always be hidden due to low value
+Hide
+Class Currency
+BaseType "Regal Shard" "Chaos Shard" "Transmutation Shard" "Alteration Shard" "Alchemy Shard" "Scroll Fragment"
+SetFontSize 16
+DisableDropSound
+# Show all currency with stack size 2 or more (usually drops from Delve)
+Show
+Class Currency
+SetTextColor 0 0 0 255
+SetBorderColor 0 0 0 255
+SetBackgroundColor 249 150 25
+StackSize >= 2
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# Crap currency (<= 0.3 chaos). Hide if stack size is one
+Hide
+Class Currency
+BaseType "Orb of Chance" "Chromatic Orb" "Jeweller's Orb" "Blacksmith's Whetstone"  "Silver Coin" "Glassblower's Bauble" "Orb of Alteration" "Orb of Transmutation" "Armourer's Scrap" "Orb of Augmentation" "Scroll of Wisdom" "Portal Scroll"
+SetFontSize 16
+DisableDropSound
+# Good currency
+Show
+Class Currency
+BaseType "Journeyman Cartographer's Sextant" "Chaos Orb" "Orb of Fusing" "Orb of Alchemy" "Cartographer's Chisel" "Gemcutter's Prism"  "Harbinger's Orb" "Ancient Orb" "Regal Orb" "Orb of Regret" "Vaal Orb" "Apprentice Cartographer's Sextant" "Stacked Deck" "Blessed Orb" "Engineer's Orb" "Orb of Horizons" "Orb of Binding" "Bestiary Orb" "Orb of Scouring" "Annulment Shard" "Harbinger's Shard" "Ancient Shard" "Necromancy Net" "Thaumaturgical Net" "Strong Steel Net" "Simple Iron Net" "Reinforced Iron Net" "Strong Iron Net" "Simple Steel Net" "Reinforced Steel Net" "Simple Rope Net" "Reinforced Rope Net" "Strong Rope Net" "Master Cartographer's Sextant" "Fossil"
+SetTextColor 0 0 0 255
+SetBorderColor 0 0 0 255
+SetBackgroundColor 249 150 25
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# Great currency 10c+
+Show
+Class Currency
+BaseType "Exalted Shard" "Orb of Annulment" "Mirror of Kalandra" "Exalted Orb" "Divine Orb" "Mirror Shard" "Eternal Orb" "Albino Rhoa Feather"
+SetTextColor 0 0 0 255
+SetBorderColor 0 0 0 255
+SetBackgroundColor 249 150 25
+SetFontSize 50
+CustomAlertSound "veryvaluable.mp3"
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# Delve currency
+Show
+Class "Delve Socketable Currency"
+SetTextColor 0 0 0 255
+SetBorderColor 0 0 0 255
+SetBackgroundColor 249 150 25
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+
+# ███╗   ███╗ █████╗ ██████╗ ███████╗
+# ████╗ ████║██╔══██╗██╔══██╗██╔════╝
+# ██╔████╔██║███████║██████╔╝███████╗
+# ██║╚██╔╝██║██╔══██║██╔═══╝ ╚════██║
+# ██║ ╚═╝ ██║██║  ██║██║     ███████║
+# ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚══════╝
+# Hide T2 maps (when farming Burial chambers)
+# Hide
+# MapTier <= 2
+# SetFontSize 16
+# DisableDropSound
+# Hide Magic Burials without Quality
+# Hide
+# BaseType "Burial Chambers Map"
+# Rarity Magic
+# Quality <= 0
+# SetFontSize 16
+# DisableDropSound
+
+# Guardian, Elder and other T16+ maps
+Show
+MapTier >= 16
+Class Maps
+SetBackgroundColor  255 255 255
+SetTextColor  255 0 255 255
+SetBorderColor  255 0 255 255
+SetFontSize 50
+CustomAlertSound "maps_t16_plus.mp3"
+DisableDropSound
+MinimapIcon 0 Brown Circle
+
+# Red maps
+Show
+MapTier >= 11
+Class Maps
+SetBackgroundColor  255 255 255
+SetTextColor  255 0 0 255
+SetBorderColor  255 0 0 255
+SetFontSize 50
+CustomAlertSound "map_red.mp3"
+DisableDropSound
+MinimapIcon 0 Yellow  Circle
+
+# Yellow maps
+Show
+MapTier >= 6
+Class Maps
+SetBackgroundColor  255 255 255
+SetTextColor  160 163 0 255
+SetBorderColor  160 163 0 255
+SetFontSize 50
+CustomAlertSound "map_yellow.wav"
+DisableDropSound
+MinimapIcon 0 Yellow  Circle
+
+# White maps
+Show
+Class Maps
+SetBackgroundColor 255 255 255 255
+SetTextColor 0 0 0 255
+SetBorderColor 0 0 0 255
+SetFontSize 50
+CustomAlertSound "map_white.mp3"
+DisableDropSound
+MinimapIcon 0 White Circle
+
+# ███████╗██████╗ ███████╗ ██████╗██╗ █████╗ ██╗     
+# ██╔════╝██╔══██╗██╔════╝██╔════╝██║██╔══██╗██║     
+# ███████╗██████╔╝█████╗  ██║     ██║███████║██║     
+# ╚════██║██╔═══╝ ██╔══╝  ██║     ██║██╔══██║██║     
+# ███████║██║     ███████╗╚██████╗██║██║  ██║███████╗
+# ╚══════╝╚═╝     ╚══════╝ ╚═════╝╚═╝╚═╝  ╚═╝╚══════╝
+Show
+Class "Misc Map Items" "Pantheon Soul" "Labyrinth" "Fishing Rod" "Leaguestone" "Piece" "Quest Items" "Incursion Item" "Hideout Doodads" "Microtransactions"
+SetTextColor 0 0 0 255
+SetBorderColor 0 0 0 255
+SetBackgroundColor 255 0 0 255
+SetFontSize 50
+CustomAlertSound "veryvaluable.mp3"
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# Hide
+# BaseType "Splinter of"
+# SetFontSize 16
+Show
+BaseType "Splinter of" "Offering to the Goddess" "Blessing of" "Perandus Coin" "Unshaping Orb" "Cartographer's Seal" "Albino Rhoa Feather" "Horizon Shard" "Engineer's Shard" "Binding Shard" "Prophecy" "Essence of" "Remnant of Corruption" "Fishing Rod" "Absorption" "Bane of the Loyal" "Cogs of Disruption" "Golden Key" "Heart of the Gargoyle" "Orb of Elemental Dispersion" "Portal Shredder" "Rod of Detonation" "Sand of Eternity" "Silver Key" "Treasure Key" "Eber's Key" "Yriel's Key" "Inya's Key" "Volkuur's Key"
+SetTextColor 0 0 0 255
+SetBorderColor 0 0 0 255
+SetBackgroundColor 255 0 0 255
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+
+# ███████╗██╗      █████╗ ███████╗██╗  ██╗███████╗
+# ██╔════╝██║     ██╔══██╗██╔════╝██║ ██╔╝██╔════╝
+# █████╗  ██║     ███████║███████╗█████╔╝ ███████╗
+# ██╔══╝  ██║     ██╔══██║╚════██║██╔═██╗ ╚════██║
+# ██║     ███████╗██║  ██║███████║██║  ██╗███████║
+# ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
+# Hide remaining flasks since the uniques are already shown in Uniques section
+Hide
+BaseType Flask
+Rarity <= Rare
+SetFontSize 16
+DisableDropSound
+# Show pertinent life and mana flasks before maps
+Show
+Class "Life Flasks" "Mana Flasks"
+DropLevel >= 0
+ItemLevel <= 5
+SetFontSize 50
+CustomAlertSound "d2_potiondrink.wav"
+DisableDropSound
+Show
+Class "Life Flasks" "Mana Flasks"
+DropLevel >= 3
+ItemLevel <= 12
+SetFontSize 50
+CustomAlertSound "d2_potiondrink.wav"
+DisableDropSound
+Show
+Class "Life Flasks" "Mana Flasks"
+DropLevel >= 6
+ItemLevel <= 18
+SetFontSize 50
+CustomAlertSound "d2_potiondrink.wav"
+DisableDropSound
+Show
+Class "Life Flasks" "Mana Flasks"
+DropLevel >= 12
+ItemLevel <= 24
+SetFontSize 50
+Show
+Class "Life Flasks" "Mana Flasks"
+DropLevel >= 18
+ItemLevel <= 30
+SetFontSize 50
+CustomAlertSound "d2_potiondrink.wav"
+DisableDropSound
+Show
+Class "Life Flasks" "Mana Flasks"
+DropLevel >= 24
+ItemLevel <= 36
+SetFontSize 50
+CustomAlertSound "d2_potiondrink.wav"
+DisableDropSound
+Show
+Class "Life Flasks" "Mana Flasks"
+DropLevel >= 30
+ItemLevel <= 42
+SetFontSize 50
+CustomAlertSound "d2_potiondrink.wav"
+DisableDropSound
+Show
+Class "Life Flasks" "Mana Flasks"
+DropLevel >= 36
+ItemLevel <= 50
+SetFontSize 50
+CustomAlertSound "d2_potiondrink.wav"
+DisableDropSound
+Show
+Class "Life Flasks" "Mana Flasks"
+DropLevel >= 42
+ItemLevel <= 67
+SetFontSize 50
+CustomAlertSound "d2_potiondrink.wav"
+DisableDropSound
+
+
+# 	   ██╗███████╗██╗    ██╗███████╗██╗     ███████╗
+# 	   ██║██╔════╝██║    ██║██╔════╝██║     ██╔════╝
+#      ██║█████╗  ██║ █╗ ██║█████╗  ██║     ███████╗
+# ██   ██║██╔══╝  ██║███╗██║██╔══╝  ██║     ╚════██║
+# ╚█████╔╝███████╗╚███╔███╔╝███████╗███████╗███████║
+#  ╚════╝ ╚══════╝ ╚══╝╚══╝ ╚══════╝╚══════╝╚══════╝
+# Show abyss jewels >= 76 if they are rare (min iLvl for T1 flat elemental dmg)
+Show
+Class "Abyss Jewel"
+Rarity >= Rare
+ItemLevel >= 76
+SetBorderColor  0 0 0
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# Show abyss jewels >= 82 even if they are not rare because they sell well
+Show
+Class "Abyss Jewel"
+ItemLevel >= 82
+SetBorderColor  0 0 0
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# Hide remaining Abyss Jewels
+Hide
+Class "Abyss Jewel"
+Rarity <= Rare
+SetFontSize 16
+DisableDropSound
+# Show rare jewels (uniques are covered in Uniques session)
+Show
+Class "Jewel"
+Rarity Rare
+SetBorderColor 0 0 0
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# Hide other jewels
+Hide
+BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"
+Rarity <= Rare
+SetFontSize 16
+DisableDropSound
+
+#  ██████╗ ███████╗███╗   ███╗███████╗
+# ██╔════╝ ██╔════╝████╗ ████║██╔════╝
+# ██║  ███╗█████╗  ██╔████╔██║███████╗
+# ██║   ██║██╔══╝  ██║╚██╔╝██║╚════██║
+# ╚██████╔╝███████╗██║ ╚═╝ ██║███████║
+#  ╚═════╝ ╚══════╝╚═╝     ╚═╝╚══════╝
+# Gems 8%+ quality
+Show
+Class  Gems
+Quality >= 8
+SetTextColor  30 150 180
+SetBorderColor  30 150 180
+SetBackgroundColor  0 0 0
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# Gems lvl19+
+Show
+Class  Gems
+GemLevel >= 19
+SetTextColor  30 150 180
+SetBorderColor  30 150 180
+SetBackgroundColor  0 0 0
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+# Crap gems
+Hide
+Class Gems
+BaseType "Abyssal Cry" "Added Chaos Damage Support" "Added Cold Damage Support" "Added Fire Damage Support" "Added Lightning Damage Support" "Additional Accuracy Support" "Advanced Traps Support" "Ancestral Call Support" "Ancestral Protector" "Ancestral Warchief" "Anger" "Animate Guardian" "Animate Weapon" "Arc" "Arcane Surge Support" "Arctic Armour" "Arctic Breath" "Assassin's Mark" "Ball Lightning" "Barrage" "Bear Trap" "Blade Flurry" "Blade Vortex" "Bladefall" "Blasphemy Support" "Blast Rain" "Blight" "Blind Support" "Blink Arrow" "Block Chance Reduction Support" "Blood Magic Support" "Blood Rage" "Bloodlust Support" "Bodyswap" "Bone Offering" "Brutality Support" "Burning Arrow" "Burning Damage Support" "Cast On Critical Strike Support" "Cast on Death Support" "Cast on Melee Kill Support" "Cast when Damage Taken Support" "Cast when Stunned Support" "Cast while Channelling" "Caustic Arrow" "Chain Support" "Chance to Bleed Support" "Chance to Flee Support" "Charged Dash" "Charged Traps Support" "Clarity" "Cleave" "Cluster Traps Support" "Cold Penetration Support" "Cold Snap" "Cold to Fire Support" "Combustion Support" "Concentrated Effect Support" "Conductivity" "Contagion" "Controlled Destruction Support" "Conversion Trap" "Convocation" "Cremation" "Culling Strike Support" "Curse On Hit Support" "Cyclone" "Damage on Full Life Support" "Dark Pact" "Deadly Ailments Support" "Decay Support" "Decoy Totem" "Desecrate" "Despair" "Determination" "Detonate Dead" "Detonate Mines" "Devouring Totem" "Discharge" "Discipline" "Dominating Blow" "Double Strike" "Dual Strike" "Earthquake" "Efficacy Support" "Elemental Damage with Attacks Support" "Elemental Focus Support" "Elemental Hit" "Elemental Proliferation Support" "Elemental Weakness" "Endurance Charge on Melee Stun Support" "Enduring Cry" "Enfeeble" "Essence Drain" "Ethereal Knives" "Explosive Arrow" "Explosive Trap" "Faster Attacks Support" "Faster Casting Support" "Faster Projectiles Support" "Fire Nova Mine" "Fire Penetration Support" "Fire Trap" "Fireball" "Firestorm" "Flame Dash" "Flame Surge" "Flame Totem" "Flameblast" "Flamethrower Trap" "Flammability" "Flesh Offering" "Flicker Strike" "Fork Support" "Fortify Support" "Freeze Mine" "Freezing Pulse" "Frenzy" "Frost Blades" "Frost Bomb" "Frost Wall" "Frostbite" "Frostbolt" "Generosity Support" "Glacial Cascade" "Glacial Hammer" "Grace" "Greater Multiple Projectiles Support" "Ground Slam" "Haste" "Hatred" "Heavy Strike" "Herald of Ash" "Herald of Ice" "Herald of Thunder" "Hypothermia Support" "Ice Bite Support" "Ice Crash" "Ice Nova" "Ice Shot" "Ice Spear" "Ice Trap" "Ignite Proliferation Support" "Immolate Support" "Immortal Call" "Incinerate" "Increased Area of Effect Support" "Increased Critical Damage Support" "Increased Critical Strikes Support" "Increased Duration Support" "Infernal Blow" "Innervate Support" "Iron Grip Support" "Iron Will Support" "Kinetic Blast" "Knockback Support" "Lacerate" "Leap Slam" "Less Duration Support" "Lesser Multiple Projectiles Support" "Lesser Poison Support" "Life Gain on Hit Support" "Life Leech Support" "Lightning Arrow" "Lightning Penetration Support" "Lightning Spire Trap" "Lightning Strike" "Lightning Tendrils" "Lightning Trap" "Lightning Warp" "Magma Orb" "Maim Support" "Mana Leech Support" "Melee Physical Damage Support" "Melee Splash Support" "Minefield Support" "Minion and Totem Elemental Resistance Support" "Minion Damage Support" "Minion Life Support" "Minion Speed Support" "Mirage Archer Support" "Mirror Arrow" "Molten Shell" "Molten Strike" "Multiple Traps Support" "Multistrike Support" "Onslaught Support" "Orb of Storms" "Phase Run" "Vicious Projectiles Support" "Physical to Lightning Support" "Pierce Support" "Poacher's Mark" "Point Blank Support" "Poison Support" "Power Charge On Critical Support" "Power Siphon" "Projectile Weakness" "Puncture" "Punishment" "Purity of Elements" "Purity of Fire" "Purity of Ice" "Purity of Lightning" "Rain of Arrows" "Raise Spectre" "Raise Zombie" "Rallying Cry" "Ranged Attack Totem Support" "Reave" "Reckoning" "Reduced Mana Support" "Rejuvenation Totem" "Remote Mine Support" "Righteous Fire" "Riposte" "Ruthless Support" "Scorching Ray" "Searing Bond" "Seismic Trap" "Shield Charge" "Shock Nova" "Shockwave Totem" "Shrapnel Shot" "Siege Ballista" "Siphoning Trap" "Slower Projectiles Support" "Smoke Mine" "Spark" "Spectral Shield Throw" "Spectral Throw" "Spell Cascade Support" "Spell Echo Support" "Spell Totem Support" "Spirit Offering" "Split Arrow" "Static Strike" "Storm Barrier Support" "Storm Burst" "Storm Call" "Stun Support" "Summon Chaos Golem" "Summon Flame Golem" "Summon Ice Golem" "Summon Lightning Golem" "Summon Phantasm on Kill Support" "Summon Raging Spirit" "Summon Skeleton" "Summon Stone Golem" "Sunder" "Sweep" "Swift Affliction Support" "Tectonic Slam" "Tempest Shield" "Temporal Chains" "Tornado Shot" "Trap and Mine Damage Support" "Trap Support" "Unbound Ailments Support" "Unearth" "Vaal Arc" "Vaal Blade Vortex" "Vaal Blight" "Vaal Burning Arrow" "Vaal Clarity" "Vaal Cold Snap" "Vaal Cyclone" "Vaal Detonate Dead" "Vaal Discipline" "Vaal Double Strike" "Vaal Earthquake" "Vaal Fireball" "Vaal Flameblast" "Vaal Glacial Hammer" "Vaal Grace" "Vaal Ground Slam" "Vaal Haste" "Vaal Ice Nova" "Vaal Immortal Call" "Vaal Impurity of Fire" "Vaal Impurity of Ice" "Vaal Impurity of Lightning" "Vaal Lightning Strike" "Vaal Lightning Trap" "Vaal Lightning Warp" "Vaal Molten Shell" "Vaal Power Siphon" "Vaal Rain of Arrows" "Vaal Reave" "Vaal Righteous Fire" "Vaal Spark" "Vaal Spectral Throw" "Vaal Storm Call" "Vaal Summon Skeletons" "Vengeance" "Vigilant Strike" "Vile Toxins Support" "Viper Strike" "Vitality" "Void Manipulation Support" "Volatile Dead" "Volley Support" "Vortex" "Vulnerability" "Warlord's Mark" "Whirling Blades" "Wild Strike" "Wither" "Wrath" "Summon Holy Relic" "Scourge Arrow" "Herald of Purity" "Toxic Rain" "Consecrated Path" "Herald of Agony" "Smite"
+SetFontSize 16
+DisableDropSound
+# Show remaining gems
+Show
+Class Gems
+SetBorderColor  0 0 0
+SetFontSize 50
+PlayAlertSound 16 300
+DisableDropSound
+MinimapIcon 0 Yellow Star
+
+# ██╗   ██╗███╗   ██╗██╗  ██╗███╗   ██╗ ██████╗ ██╗    ██╗███╗   ██╗
+# ██║   ██║████╗  ██║██║ ██╔╝████╗  ██║██╔═══██╗██║    ██║████╗  ██║
+# ██║   ██║██╔██╗ ██║█████╔╝ ██╔██╗ ██║██║   ██║██║ █╗ ██║██╔██╗ ██║
+# ██║   ██║██║╚██╗██║██╔═██╗ ██║╚██╗██║██║   ██║██║███╗██║██║╚██╗██║
+# ╚██████╔╝██║ ╚████║██║  ██╗██║ ╚████║╚██████╔╝╚███╔███╔╝██║ ╚████║
+#  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚══╝╚══╝ ╚═╝  ╚═══╝
+# Items matched here means we missed something and need to include in the filter
+Show 
+SetTextColor 255 0 255 255
+SetBorderColor 255 0 255 255
+SetBackgroundColor 255 255 255 255
+PlayAlertSound 3 300
+SetFontSize 50
+MinimapIcon 0 Yellow Star
